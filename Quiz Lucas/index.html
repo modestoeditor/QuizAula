@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz Marvel — Mini Enigma</title>
+    <meta name="description" content="Mini-quiz Marvel, 5 perguntas do fácil ao difícil." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <section class="card" aria-labelledby="quiz-title">
+        <header class="card__header">
+          <h1 id="quiz-title" class="title">Quiz Marvel — Mini Enigma</h1>
+
+          <!-- Indicador de progresso (texto) -->
+          <p id="progressText" class="progress__text" aria-live="polite">
+            Pergunta 1 de 5
+          </p>
+
+          <!-- Barra de progresso acessível -->
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" aria-label="Progresso do quiz">
+            <div class="progress__bar" id="progressBar" style="width: 0%"></div>
+          </div>
+        </header>
+
+        <!-- Região de feedback para leitores de tela -->
+        <div id="srFeedback" class="sr-only" aria-live="polite"></div>
+
+        <!-- Área da pergunta -->
+        <div class="question" id="questionContainer">
+          <h2 id="questionText" class="question__title">Carregando…</h2>
+
+          <div class="options" id="optionsContainer" role="group" aria-labelledby="questionText">
+            <!-- Botões criados dinamicamente via JS -->
+          </div>
+        </div>
+
+        <!-- Ações -->
+        <footer class="card__footer">
+          <button id="nextBtn" class="btn btn--primary" type="button" disabled aria-disabled="true">
+            Próxima
+          </button>
+        </footer>
+
+        <!-- Tela de resultado (inicialmente escondida) -->
+        <section id="resultScreen" class="result hidden" aria-labelledby="resultTitle">
+          <h2 id="resultTitle" class="result__title">Resultado</h2>
+          <p id="scoreText" class="result__score">Você acertou 0 de 5</p>
+          <p id="scoreMessage" class="result__message">Tente mais!</p>
+          <button id="restartBtn" class="btn btn--ghost" type="button">
+            Jogar novamente
+          </button>
+        </section>
+      </section>
+
+      <footer class="app__footer">
+        <small>Sem frameworks. HTML5 + CSS3 + JS puro.</small>
+      </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
